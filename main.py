@@ -7,7 +7,7 @@ from handlers import router
 
 async def main():
     load_dotenv()
-    bot = Bot(token='TOKEN')
+    bot = Bot(os.getenv('TOKEN'))
     dp = Dispatcher()
     dp.include_router(router)
     await dp.start_polling(bot)
